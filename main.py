@@ -12,7 +12,6 @@ def shorten_link(token, url):
     request_json = {'long_url': url}
     headers = {
       'Authorization': full_token,
-      'Content-Type': 'application/json',
     }
 
     response = requests.post(bitly_url, headers=headers,
