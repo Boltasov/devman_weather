@@ -64,7 +64,7 @@ def main():
     url = args.url
 
     load_dotenv()
-    token = os.getenv('BITLY_TOKEN')
+    token = os.environ['BITLY_TOKEN']
 
     if is_bitlink(url, token):
         try:
