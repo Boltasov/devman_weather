@@ -19,6 +19,13 @@ Use `pip` (or `pip3`, if there is a conflict with Python2) to install dependenci
 pip install -r requirements.txt
 ```
 
+### Start script
+To execute script use terminal. Execute this command from the project directory:
+```
+python main.py your_url
+```
+It supports only full links including ``http:// or https://``.
+
 ### Project Goals
 
 This code was written for educational purposes as part of an online course for web developers at [dvmn.org](https://dvmn.org/).
