@@ -6,11 +6,10 @@ from dotenv import load_dotenv
 
 
 def shorten_link(token, url):
-    full_token = f'Bearer {token}'
     bitly_url = 'https://api-ssl.bitly.com/v4/shorten'
     long_url = {'long_url': url}
     headers = {
-      'Authorization': full_token,
+      'Authorization': f'Bearer {token}',
     }
 
     response = requests.post(bitly_url, headers=headers,
@@ -21,12 +20,11 @@ def shorten_link(token, url):
 
 
 def count_clicks(token, url):
-    full_token = f'Bearer {token}'
     url_parts = urlparse(url)
     bitly_url = 'https://api-ssl.bitly.com/v4/bitlinks/{}{}/clicks/summary'\
                 .format(url_parts.hostname, url_parts.path)
     headers = {
-      'Authorization': full_token,
+      'Authorization': f'Bearer {token}',
     }
 
     response = requests.get(bitly_url, headers=headers)
@@ -38,13 +36,12 @@ def count_clicks(token, url):
 
 
 def is_bitlink(url, token):
-    full_token = f'Bearer {token}'
     url_parts = urlparse(url)
     bitly_url = 'https://api-ssl.bitly.com/v4/bitlinks/{}{}'\
                 .format(url_parts.hostname, url_parts.path)
 
     headers = {
-      'Authorization': full_token,
+      'Authorization': f'Bearer {token}',
     }
 
     response = requests.get(bitly_url, headers=headers)
