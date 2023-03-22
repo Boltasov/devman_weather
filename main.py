@@ -9,13 +9,13 @@ from dotenv import load_dotenv
 def shorten_link(token, url):
     full_token = f'Bearer {token}'
     bitly_url = 'https://api-ssl.bitly.com/v4/shorten'
-    request_json = {'long_url': url}
+    long_url = {'long_url': url}
     headers = {
       'Authorization': full_token,
     }
 
     response = requests.post(bitly_url, headers=headers,
-                             json=request_json)
+                             json=long_url)
     response.raise_for_status()
 
     return response.json()['link']
