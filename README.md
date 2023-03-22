@@ -10,7 +10,7 @@ To use se script you need to get Bitly API token. Go [here](https://app.bitly.co
 
 This token you should put to a ```'.env'``` file. Create the file in the directory where ``main.py`` located. Put this to the ``.env`` file:
 ```
-BITLY_TOKEN = 'Put_here_your_token'
+BITLY_TOKEN='Put_here_your_token'
 ```
 
 Python3 should already be installed. 
